@@ -1,19 +1,13 @@
 package org.example.service;
 
 import jakarta.persistence.*;
+import org.example.connection.EntityManagerProvider;
 import org.example.model.Appointment;
 import org.example.repository.AppointmentRepository;
 
 import java.util.Optional;
 
 public class AppointmentService {
-    public class EntityManagerProvider{
-        private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("Appointmentdb");
-
-        public static EntityManager getEm() {
-            return emf.createEntityManager();
-        }
-    }
 
     private AppointmentRepository apr = new AppointmentRepository();
 
